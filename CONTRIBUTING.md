@@ -17,6 +17,11 @@ python3 -m venv .venv
 python -m pip install -e '.[dev]'
 ```
 
+In Windows PowerShell, replace the two virtual-environment commands with
+`py -3 -m venv .venv` and `.venv\Scripts\Activate.ps1`. Confirm `py -3 --version`
+reports Python 3.11 or newer; select an installed minor version explicitly if
+needed, then run the install command in the activated shell.
+
 Run the offline checks:
 
 ```bash

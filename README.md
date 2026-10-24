@@ -49,6 +49,12 @@ python -m pip install -e .
 privacyflow
 ```
 
+In Windows PowerShell, replace the two virtual-environment commands above with
+`py -3 -m venv .venv` and `.venv\Scripts\Activate.ps1`. Confirm `py -3 --version`
+reports Python 3.11 or newer; select an installed minor version explicitly if
+needed (for example, `py -3.12`). Then run the remaining install and launch
+commands in the activated shell.
+
 To install a tagged release into an existing environment instead:
 
 ```bash
@@ -216,9 +222,10 @@ data-loss prevention.
 
 ## 🔧 Detailed setup and migration
 
-On Windows PowerShell, activate the environment with
-`.venv\Scripts\Activate.ps1`. The first start creates
-`.privacyflow/launcher.json`, a random local Agent API key, and a signing secret.
+For the Windows PowerShell virtual-environment commands, see
+[Quick Start](#quick-start). The first start creates `.privacyflow/launcher.json`,
+a random local Agent API key,
+and a signing secret.
 PrivacyFlow then serves its loopback WebUI at `http://127.0.0.1:8765/ui/`.
 
 ### Connect an upstream
@@ -480,6 +487,10 @@ node --check src/gateway/webui/app.js
 node --check src/gateway/webui/i18n.js
 ruff check .
 ```
+
+The development commands use a Unix shell. In Windows PowerShell, create and
+activate the environment with the commands in [Quick Start](#quick-start), then
+run the remaining checks from that activated shell.
 
 Networked local-model integration is intentionally excluded from normal tests:
 

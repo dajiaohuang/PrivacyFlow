@@ -7,6 +7,11 @@ versions may include breaking changes, which are called out explicitly.
 
 ## [Unreleased]
 
+### Fixed
+
+- Document Windows PowerShell virtual-environment creation and activation in
+  the READMEs and contribution guide.
+
 ## [0.1.0] - 2026-09-19
 
 First public release under the PrivacyFlow name. Earlier revisions were

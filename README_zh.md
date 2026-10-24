@@ -46,6 +46,11 @@ python -m pip install -e .
 privacyflow
 ```
 
+在 Windows PowerShell 中，请用 `py -3 -m venv .venv` 和
+`.venv\Scripts\Activate.ps1` 替换上面的两条虚拟环境命令。请确认
+`py -3 --version` 显示 Python 3.11 或更高版本；如有需要，请显式指定已安装的版本，
+例如 `py -3.12`。激活环境后，再运行其余安装和启动命令。
+
 如需把某个正式版本安装到已有环境：
 
 ```bash
@@ -149,7 +154,7 @@ and use key sk-example-not-a-real-key.
 
 ## 🔧 详细接入与迁移
 
-在 Windows PowerShell 中，请使用 `.venv\Scripts\Activate.ps1` 激活环境。
+Windows PowerShell 的虚拟环境创建和激活命令请参阅[快速开始](#quick-start)。
 首次启动会创建 `.privacyflow/launcher.json`、随机本地 Agent API Key 和签名密钥，
 并在 `http://127.0.0.1:8765/ui/` 提供仅限 loopback 的 WebUI。
 
@@ -346,6 +351,9 @@ node --check src/gateway/webui/app.js
 node --check src/gateway/webui/i18n.js
 ruff check .
 ```
+
+以上开发命令使用 Unix shell。在 Windows PowerShell 中，请使用[快速开始](#quick-start)
+列出的命令创建并激活环境，然后在该环境中运行其余检查。
 
 联网的本地模型集成测试有意排除在普通测试之外：
 
